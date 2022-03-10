@@ -77,4 +77,16 @@ public class UserRegistrationTest {
 		boolean result = userRegistration.password2("ruretreff");
 		Assert.assertEquals(false, result);
 	}
+
+	@Test
+	public void givenPasswordRule3_WhenValid_ShouldReturnTrue() {
+		boolean result = userRegistration.password3("imruAAtuja7");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPasswordRule3_WhenInvalid_ShouldReturnFalse() {
+		boolean result = userRegistration.password3("ruretref");
+		Assert.assertEquals(false, result);
+	}
 }

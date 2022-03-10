@@ -108,4 +108,22 @@ public class UserRegistration {
 		Matcher matcher = pattern.matcher(password);
 		return matcher.matches();
 	}
+
+	/*
+	 * @purpose: As a User need to follow pre-defined Password rules. RULE1 –
+	 * minimum 8 Characters Rule3 Should have at least 1 numeric number in the
+	 * password
+	 * 
+	 * @param: password
+	 * 
+	 * @function: To check password is Valid or not
+	 * 
+	 * @returns true or false
+	 */
+	public boolean password3(String password) {
+		regex = "^[a-z](?=.*[A-Z]+)(?=.*[0-9]+).{8,}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(password);
+		return matcher.matches();
+	}
 }
