@@ -56,13 +56,25 @@ public class UserRegistrationTest {
 
 	@Test
 	public void givenPassword_WhenValid_ShouldReturnTrue() {
-		boolean result = userRegistration.password("imrutuja");
+		boolean result = userRegistration.password1("imrutuja");
 		Assert.assertEquals(true, result);
 	}
 
 	@Test
 	public void givenPassword_WhenInvalid_ShouldReturnFalse() {
-		boolean result = userRegistration.password("ru");
+		boolean result = userRegistration.password1("ru");
+		Assert.assertEquals(false, result);
+	}
+
+	@Test
+	public void givenPasswordRule2_WhenValid_ShouldReturnTrue() {
+		boolean result = userRegistration.password2("imruAAtuja");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPasswordRule2_WhenInvalid_ShouldReturnFalse() {
+		boolean result = userRegistration.password2("ruretreff");
 		Assert.assertEquals(false, result);
 	}
 }
