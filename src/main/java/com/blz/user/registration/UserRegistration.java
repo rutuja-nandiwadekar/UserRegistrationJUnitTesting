@@ -37,4 +37,22 @@ public class UserRegistration {
 		Matcher matcher = pattern.matcher(lastName);
 		return matcher.matches();
 	}
+
+	/*
+	 * @purpose: As a User need to enter a valid email E.g. abc.xyz@bl.co.in - Email
+	 * has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with precise @
+	 * and . positions
+	 * 
+	 * @param: email
+	 * 
+	 * @function: To check email is Valid or not
+	 * 
+	 * @returns true or false
+	 */
+	public boolean email(String email) {
+		String regex = "^[a-z]+[+-_.]*[a-z]*[@][a-z]+[.][a-z]{2,4}[.]*([a-z]{2})*$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(email);
+		return matcher.matches();
+	}
 }
