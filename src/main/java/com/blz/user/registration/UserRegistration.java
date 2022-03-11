@@ -93,8 +93,8 @@ public class UserRegistration {
 	}
 
 	/*
-	 * @purpose: As a User need to follow pre-defined Password rules. RULE1 –
-	 * minimum 8 Characters Rule2 – Should have at least 1 Upper Case
+	 * @purpose: As a User need to follow pre-defined Password Rule2 – Should have
+	 * at least 1 Upper Case
 	 * 
 	 * @param: password
 	 * 
@@ -110,9 +110,8 @@ public class UserRegistration {
 	}
 
 	/*
-	 * @purpose: As a User need to follow pre-defined Password rules. RULE1 –
-	 * minimum 8 Characters Rule3 Should have at least 1 numeric number in the
-	 * password
+	 * @purpose: As a User need to follow pre-defined Password rules. Rule3 Should
+	 * have at least 1 numeric number in the password
 	 * 
 	 * @param: password
 	 * 
@@ -122,6 +121,23 @@ public class UserRegistration {
 	 */
 	public boolean password3(String password) {
 		regex = "^[a-z](?=.*[A-Z]+)(?=.*[0-9]+).{8,}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(password);
+		return matcher.matches();
+	}
+
+	/*
+	 * @purpose: As a User need to follow pre-defined Password rules. Rule4 – Has
+	 * exactly 1 Special Character
+	 * 
+	 * @param: password
+	 * 
+	 * @function: To check password is Valid or not
+	 * 
+	 * @returns true or false
+	 */
+	public boolean password4(String password) {
+		regex = "^[0-9a-zA-Z!,@#$&*().]{8,}$";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(password);
 		return matcher.matches();
