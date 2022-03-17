@@ -21,7 +21,7 @@ public class EmailIdTest {
 
 	@Parameterized.Parameters
 	public static Collection emailIds_With_ExpectedResult() {
-		return Arrays.asList(new Object[][] { { "abc.syz@bl.co.in", true }, { "abc-100@yahoo.com", true },
+		return Arrays.asList(new Object[][] { { "abcd.syz@bl.co.in", true }, { "abc-100@yahoo.com", true },
 				{ "abc.100@yahoo.com", true }, { "abc111@abc.com", true }, { "abc-100@abc.net", true },
 				{ "abc.100@abc.com.au", true }, { "abc@1.com", true }, { "abc@gmail.com.com", true },
 				{ "abc+100@gmail.com", true }, { "abc", false }, { "abc@.com.my", false }, { "abc123@gmail.a", false },
